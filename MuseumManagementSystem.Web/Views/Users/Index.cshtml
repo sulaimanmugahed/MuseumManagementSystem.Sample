@@ -1,0 +1,153 @@
+﻿
+
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Users";
+}
+
+@section Styles {
+
+    <link href="~/css/datatable.css" rel="stylesheet" />
+}
+<div class="page-header">
+    <h4>@localizer["users"]</h4>
+    <back-button />
+
+
+</div>
+<div class="card">
+    <div class="card-body col-12 dt-style " style="min-height:550px;">
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["AlertMessage"]
+
+            </div>
+        }
+
+        <div class="row dt-btn-dev mb-2">
+            <div class="myButtons col-lg-8 col-md-8 col-sm-12">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <input type="text" class=" table_search " id="tableSearch" placeholder="@localizer["search_placeholder"]">
+            </div>
+        </div>
+
+        <table id="table_users" class="table table-striped table-bordered pt-4" cellspacing="0" >
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>@localizer["firstName"]</th>
+                    <th>@localizer["lastName"]</th>
+                    <th>@localizer["userName"]</th>
+                    <th>@localizer["email"]</th>
+                    <th>@localizer["phoneNumber"]</th>
+                    <th>@localizer["role"]</th>
+                    <th></th>
+
+                </tr>
+
+            </thead>
+        </table>
+
+        <div class="dt_info">
+        </div>
+        <div class="my_pagination">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_DataTableScript");
+       
+    }
+    <script src="~/js/users/index.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+@* @model IEnumerable<UserViewModel>
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<div class="page-header">
+    <h4>@localizer["users"]</h4>
+
+</div>
+
+
+<div class="card" >
+    <div class="card-body col-12">
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["AlertMessage"]
+
+            </div>
+        }
+
+        <a class="btn btn-primary" asp-action="Create">@localizer["add"]</a>
+<table class="table table-striped mt-4">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr class="todelete">
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.Role</td>
+                <td>
+
+                            <a class="btn btn-outline-primary "  asp-controller="Users" asp-action="Edit" asp-route-userid="@user.Id">@localizer["edit"]</a>
+                           
+                                <a href="javascript:;" class="btn btn-danger js-delete" data-id="@user.Id">@localizer["delete"]</a>
+                           
+                            
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+</div>
+
+@section Scripts {
+    @{
+        
+        var isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
+        if (isRTL)
+        {
+            <script src="~/js/shared/const-ar.js"></script>
+            <script src="~/js/users/users-ar.js"></script>
+        }
+        else
+        {
+            <script src="~/js/shared/const-en.js"></script>
+            <script src="~/js/users/users-en.js"></script>
+        }
+    }
+}  *@

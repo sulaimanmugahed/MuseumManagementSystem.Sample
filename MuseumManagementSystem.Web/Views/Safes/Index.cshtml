@@ -1,0 +1,59 @@
+﻿
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Safes";
+}
+
+@section Styles {
+
+    <link href="~/css/datatable.css" rel="stylesheet" />
+}
+<div class="page-header">
+    <h4>@localizer["safes"]</h4>
+
+</div>
+<div class="card">
+    <div class="card-body dt-style col-12" style="min-height:550px;">
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["AlertMessage"]
+
+            </div>
+        }
+        <div class="row dt-btn-dev mb-2">
+            <div class="myButtons col-lg-8 col-md-8 col-sm-12">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <input type="text" class=" table_search " id="tableSearch" placeholder="@localizer["search_placeholder"]">
+            </div>
+        </div>
+        <table id="table_safes" class="table table-striped table-bordered pt-4 " cellspacing="0">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>@localizer["name"]</th>
+                    <th>@localizer["artifactsCount"]</th>
+                    <th>@localizer["stowageName"]</th>
+                    <th></th>
+
+                </tr>
+
+            </thead>
+        </table>
+        <div class="dt_info">
+        </div>
+        <div class="my_pagination">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_DataTableScript");
+       
+    }
+    <script src="~/js/safes/index.js"></script>
+}

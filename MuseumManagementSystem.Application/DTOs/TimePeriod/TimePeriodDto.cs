@@ -1,0 +1,17 @@
+﻿using MuseumManagementSystem.Application.DTOs.Artifact;
+using MuseumManagementSystem.Application.DTOs.Common;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MuseumManagementSystem.Application.DTOs.TimePeriod
+{
+    public class TimePeriodDto:BaseDto
+    {
+        public string Name { get; set; }
+        public List<ArtifactDto> Artifacts { get; set; } = [];
+
+    }
+}

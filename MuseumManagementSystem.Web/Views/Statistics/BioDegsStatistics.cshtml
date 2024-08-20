@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "ArtifactBioDegsStatistics";
+}
+
+<div class="page-header pb-2">
+    <h4>@localizer["biodegs_statistics"]</h4>
+    <back-button />
+</div>
+        <div class="card">
+            <div class="card-body chart-container">
+                <div class="row pb-4">
+            <div class="col-lg-6 col-md-6 col-sm-6 mb-2">
+                        <button class="btn btn-primary" onclick="exportExcel()">@localizer["export"]</button>
+                    </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-2 ">
+                        <select class="form-select " id="chartTypeSelector" onchange="changeChartType()">
+                            <option value="bar">@localizer["barChart"]</option>
+                            <option value="line">@localizer["lineChart"]</option>
+                            <option value="pie">@localizer["pieChart"]</option>
+                            <option value="radar">@localizer["radarChart"]</option>
+                            <option value="doughnut">@localizer["doughnutChart"]</option>
+                        </select>
+                    </div>
+                </div>
+        <div class="chart-dev">
+            <div class="chart-con">
+                <canvas id="bioDegsChart" class="chart-can"></canvas>
+            </div>
+        </div>
+            </div>
+        </div>
+  
+@section Scripts {
+    <script src="~/js/charts/bio-degs.js"></script>
+}

@@ -1,0 +1,224 @@
+.dropdown {
+    display: inline-block;
+ 
+}
+
+    .dropdown .dropdown-content {
+        display: none;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        position: absolute;
+       
+        right: 50px;
+        bottom:-50px;
+        z-index: 100;
+    }
+
+.show-dropdown-content {
+    display: block;
+}
+
+.dt-style {
+    width: 100%;
+    overflow:hidden;
+}
+
+.dataTables_paginate {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 20px;
+}
+    .dataTables_paginate .previous, .dataTables_paginate .next {
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #2980B9;
+        border: 1px solid #2980B9;
+        text-decoration: none;
+    }
+
+        .dataTables_paginate .previous:hover, .dataTables_paginate .next:hover {
+            background-color: #2980B9;
+            color: white;
+        }
+
+        .paginate_button {
+            text-decoration: none;
+        }
+
+
+
+.dataTables_paginate .current {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #2980B9;
+    margin-inline: 15px;
+    cursor: pointer;
+    border: 1px solid #2980B9;
+    text-decoration: none;
+}
+        .dataTables_paginate .current:hover {
+            background-color: #2980B9;
+            color:white;
+        }
+
+    .dataTables_paginate .disabled {
+        background-color: #ccc;
+        color: white;
+        border:none;
+       
+    }
+        .dataTables_paginate .disabled:hover {
+            background-color: #ccc;
+            color: white;
+        }
+.dt_info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dataTables_wrapper {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+    .dt-style table, .dt-style .dataTable {
+        width:100%;
+        overflow: hidden !important;
+        overflow-x: scroll !important;
+    }
+
+    .dt-style::-webkit-scrollbar {
+        width: .6rem;
+        border-radius: .5rem;
+    }
+
+    .dt-style::-webkit-scrollbar-thumb {
+        border-radius: .5rem;
+    }
+
+        .dt-style::-webkit-scrollbar-thumb:hover {
+            background-color: gainsboro;
+        }
+
+
+.dt-btn-dev{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+.dataTables_filter {
+    display: none;
+}
+    .table_search{
+       width:100%;
+       height:45px;
+       border:1px solid #ccc;
+       border-radius:20px;
+
+    }
+        .table_search:focus {
+            
+            border: 1px solid #2980B9;
+        }
+
+.dataTables_filter label, .dataTables_filter input {
+    width: 100% !important;
+}
+
+
+.myButtons {
+    position: relative;
+    width:100%;
+}
+.dt-buttons {
+    position: fixed;
+    width: 100%;
+    display:flex;
+    justify-content:space-between;
+}
+
+table thead {
+    text-align: center;
+}
+.table .dt-center {
+    position:relative;
+}
+
+
+/*    #tb_artifacts td a {
+        display: inline !important;
+        white-space: normal !important;
+        word-break: break-word;
+    }*/
+
+
+
+
+
+
+    thead input {
+        width: 100%;
+    }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background: white !important;
+}
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        color: white !important;
+        border: 1px solid #2980B9 !important;
+        background-color: #2980B9 !important;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2980B9), color-stop(100%, #2980B9)) !important;
+        background: -webkit-linear-gradient(top, #2980B9 0%, #2980B9 100%) !important;
+        background: -moz-linear-gradient(top, #2980B9 0%, #2980B9 100%) !important;
+        background: -o-linear-gradient(top, #2980B9 0%, #2980B9 100%) !important;
+        background: linear-gradient(to bottom, #2980B9 0%, #2980B9 100%) !important;
+    }
+
+.btn-export-excel:hover, .btn-export-print:hover, .page-lenght-list:hover, .cilvis-list:hover {
+    color: white !important;
+    border: 1px solid #2980B9 !important;
+    background-color: #2980B9 !important;
+}
+
+.btn-export-excel, .btn-export-print, .page-lenght-list, .cilvis-list {
+    color: black !important;
+    border-radius: 5px !important;
+    background: white !important;
+}
+
+
+@media (min-width: 576px) {
+    .dt-buttons {
+        display: flex;
+    }
+
+   
+}
+
+@media (min-width: 768px) {
+    .dt-buttons {
+        display: block;
+    }
+
+  
+}
+
+@media (min-width: 992px) {
+    .dt-buttons {
+        display: block;
+    }
+
+}

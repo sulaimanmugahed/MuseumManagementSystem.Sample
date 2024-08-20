@@ -1,0 +1,44 @@
+﻿@model StowageViewModel
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="page-header pb-2">
+    <h4>@localizer["edit_stowage_title"]</h4>
+    <back-button />
+
+</div>
+<div class="card">
+    <div class="card-body col-12">
+        <form asp-action="Edit" method="post">
+            <div class="row  pb-4">
+                <div class=" col-lg-4 col-md-6 col-sm-12">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input type="text" asp-for="Name" class="form-control" placeholder="@localizer["stowage_name_placeholder"]">
+                    <input type="hidden" asp-for="Id" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class=" col-lg-4 col-md-6 col-sm-12">
+                    <label asp-for="Address" class="form-label"></label>
+                    <input type="text" asp-for="Address" class="form-control" placeholder="@localizer["stowage_address_placeholder"]">
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+            <button type="submit" value="Create" class="btn btn-primary">
+                <span class="btnText">@localizer["save"]</span>
+            </button>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+
+}

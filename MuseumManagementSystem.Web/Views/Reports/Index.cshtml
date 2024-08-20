@@ -1,0 +1,85 @@
+﻿@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Reports";
+}
+@section Styles {
+    
+    <link href="~/css/datatable.css" rel="stylesheet" />
+    <link href="~/css/report.css" rel="stylesheet" />
+}
+
+
+<div class="page-header">
+    <h4>@localizer["reports"]</h4>
+
+</div>
+<div class="card mb-2">
+    <div class="card-body col-12">
+        <h4 class=" pb-3">@localizer["reportInformations"]</h4>
+        <div class="row ">
+            <div class="col-lg-6 colcol-md-12 col-sm-12 mb-2">
+                <label class="form-label">@localizer["reportTitle"]</label>
+                <input type="text" class="form-control" id="exportTitle" placeholder="@localizer["report_title_placeholder"]" aria-label="Title">
+            </div>
+            <div class="col-lg-6 colcol-md-12 col-sm-12  mb-2">
+                <label class="form-label">@localizer["reportNO"]</label>
+                <input type="text" class="form-control" id="exportNumber" placeholder="@localizer["report_no_placeholder"]" aria-label="ReportNO">
+            </div>
+            <div class="col-lg-6 colcol-md-12 col-sm-12  mb-2" style="overflow:hidden;">
+                <label class="form-label">@localizer["reportDate"]</label>
+                <input type="text" class="form-control" id="exportDate" placeholder="@localizer["report_date_placeholder"]" aria-label="Date">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+<div class="card-body dt-style  col-12" style="min-height:550px;">
+      
+    
+
+        <div class="row dt-btn-dev mb-2">
+            
+            <div class="myButtons col-lg-8 col-md-8 col-sm-12">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-2">
+                <input type="text" class=" table_search " id="tableSearch" placeholder="@localizer["search_placeholder"]">
+            </div>
+        </div>
+       
+        <table id="tb_artifacts" class="table table-striped  dt-responsive pt-4 " cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="noVis no-sort">Id</th>
+                    <th>@localizer["name"]</th>
+                    <th>@localizer["serialNumber"]</th>
+                    <th>@localizer["oldMuseumNumber"]</th>
+                    <th>@localizer["newMuseumNumber"]</th>
+                    <th>@localizer["type"]</th>
+                    <th>@localizer["importantMaterial"]</th>
+                    <th>@localizer["artifactCondition"]</th>
+                    <th>@localizer["safe"]</th>
+                    <th>@localizer["stowage"]</th>
+                    <th>@localizer["count"]</th>
+                    <th>@localizer["imageLink"]</th>
+            </thead>
+        </table>
+        <div class="dt_info">
+        </div>
+        <div class="my_pagination">
+        </div>
+        
+      
+      
+   
+</div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_DataTableScript");
+    }
+
+    <script src="~/js/reports/index.js"></script>
+   
+}

@@ -1,0 +1,44 @@
+﻿@section Styles {
+    <link href="~/css/inteleStyle.css" rel="stylesheet" />
+    <link href="~/css/boxicons.min.css" rel="stylesheet" />
+    <link href="~/css/baguetteBox.min.css" rel="stylesheet" />
+
+}
+
+<div class="mt-4">
+    <div class="container-input  ">
+        <form id="imgForm" method="POST" enctype="multipart/form-data">
+            <input name="query_img" type="file" id="file" accept="image/*" hidden>
+            <div class="img-area " data-img="" data-default="">
+
+                <h3>@localizer["intele_search_image_upload_msg_one"]</h3>
+                <p>@localizer["intele_search_image_upload_msg_tow"]</p>
+            </div>
+            <button type="button" class="select-image">@localizer["select_image"]</button>
+            <app-button 
+            type="submit"
+            class-name="send-image"
+            is-loading="true"
+            text=@localizer["send"].Value />
+        </form>
+    </div>
+
+    
+
+    <div class="tz-gallery">
+        <div class="row scores-container">
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/intele-search/baguetteBox.min.js"></script>
+
+    <script src="~/js/intele-search/script.js"></script>
+    <script src="~/js/intele-search/axios.min.js"></script>
+   <script type="text/javascript">
+        baguetteBox.run('.gallery');
+   </script>
+
+}

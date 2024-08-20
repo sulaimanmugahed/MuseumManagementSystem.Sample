@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<link href="~/css/site.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link href="~/css/virtual-select.min.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="~/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
+<body>
+
+    <div class="card">
+        <div class="card-body col-12">
+
+        @RenderBody()
+    </div>
+    </div>
+
+    <script src="~/lib/bootbox.js/bootbox.js"></script>
+    <script src="~/lib/bootbox.js/bootbox.min.js"></script>
+    <!-- End custom js for this page -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
+</body>
+

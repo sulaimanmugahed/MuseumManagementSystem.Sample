@@ -1,0 +1,32 @@
+﻿@model SafeViewModel
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = "AddNewSafe";
+
+}
+
+<div class="page-header pb-2">
+    <h4>@localizer["add_new_safe_to_stowage_title"]</h4>
+    <back-button />
+
+</div>
+<div class="card">
+    <div class="card-body col-12">
+        <form asp-action="AddNewSafe" method="post">
+            <div class="row  pb-4">
+                <div class=" col-6">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input type="text" asp-for="Name" class="form-control" placeholder="Enter Name " required>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                    <input type="hidden" asp-for="StowageId" >
+                  
+                
+            </div>
+            <button type="submit" value="Create" class="btn btn-primary">
+                <span class="btnText">@localizer["save"]</span>
+            </button>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿
+
+@media (max-width: 576px) {
+    .dt-buttons {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+        .dt-buttons button {
+            width: 100%;
+        }
+
+
+        .dt-buttons .buttons-excel, .dt-buttons .buttons-print {
+            width: 45%;
+        }
+}
+

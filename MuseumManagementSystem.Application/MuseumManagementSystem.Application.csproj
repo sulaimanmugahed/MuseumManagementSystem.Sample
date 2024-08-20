@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MuseumManagementSystem.Domain\MuseumManagementSystem.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\ArtifactCondition\Validators\" />
+    <Folder Include="DTOs\ArtifactImage\Validators\" />
+    <Folder Include="DTOs\ArtifactType\Validators\" />
+    <Folder Include="DTOs\BioDeg\Validators\" />
+    <Folder Include="DTOs\Material\Validators\" />
+    <Folder Include="DTOs\Safe\Validators\" />
+    <Folder Include="DTOs\Stowage\Validators\" />
+    <Folder Include="DTOs\TimePeriod\Validators\" />
+    <Folder Include="Features\ArtifactConditions\Handlers\Commands\" />
+    <Folder Include="Features\ArtifactConditions\Handlers\Queries\" />
+    <Folder Include="Features\ArtifactConditions\Requests\Commands\" />
+    <Folder Include="Features\ArtifactConditions\Requests\Queries\" />
+    <Folder Include="Features\ArtifactImages\Handlers\Commands\" />
+    <Folder Include="Features\ArtifactImages\Handlers\Queries\" />
+    <Folder Include="Features\ArtifactImages\Requests\Commands\" />
+    <Folder Include="Features\ArtifactImages\Requests\Queries\" />
+    <Folder Include="Features\ArtifactMaterials\Handlers\Commands\" />
+    <Folder Include="Features\ArtifactMaterials\Handlers\Queries\" />
+    <Folder Include="Features\ArtifactMaterials\Requests\Commands\" />
+    <Folder Include="Features\ArtifactMaterials\Requests\Queries\" />
+    <Folder Include="Features\ArtifactTypes\Handlers\Commands\" />
+    <Folder Include="Features\ArtifactTypes\Handlers\Queries\" />
+    <Folder Include="Features\ArtifactTypes\Requests\Commands\" />
+    <Folder Include="Features\ArtifactTypes\Requests\Queries\" />
+    <Folder Include="Features\BioDegs\Handlers\Commands\" />
+    <Folder Include="Features\BioDegs\Handlers\Queries\" />
+    <Folder Include="Features\BioDegs\Requests\Commands\" />
+    <Folder Include="Features\BioDegs\Requests\Queries\" />
+    <Folder Include="Features\Materials\Handlers\Commands\" />
+    <Folder Include="Features\Materials\Handlers\Queries\" />
+    <Folder Include="Features\Materials\Requests\Commands\" />
+    <Folder Include="Features\Materials\Requests\Queries\" />
+    <Folder Include="Features\Safes\Handlers\Commands\" />
+    <Folder Include="Features\Safes\Handlers\Queries\" />
+    <Folder Include="Features\Safes\Requests\Commands\" />
+    <Folder Include="Features\Safes\Requests\Queries\" />
+    <Folder Include="Features\Stowages\Handlers\Commands\" />
+    <Folder Include="Features\Stowages\Handlers\Queries\" />
+    <Folder Include="Features\Stowages\Requests\Commands\" />
+    <Folder Include="Features\Stowages\Requests\Queries\" />
+    <Folder Include="Features\TimePeriods\Handlers\Commands\" />
+    <Folder Include="Features\TimePeriods\Handlers\Queries\" />
+    <Folder Include="Features\TimePeriods\Requests\Commands\" />
+    <Folder Include="Features\TimePeriods\Requests\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+</Project>

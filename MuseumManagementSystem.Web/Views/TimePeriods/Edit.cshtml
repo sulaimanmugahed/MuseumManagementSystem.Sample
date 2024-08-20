@@ -1,0 +1,41 @@
+﻿@model TimePeriodViewModel
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Edit";
+
+}
+
+<div class="page-header pb-2">
+    <h4>@localizer["edit_timePeriod_title"]</h4>
+    <back-button />
+
+</div>
+
+<div class="card">
+    <div class="card-body dt-style col-12">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row  pb-4">
+                <div class=" col-lg-6 col-md-6 col-sm-12 mb-4">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input type="text" asp-for="Name" class="form-control" placeholder="@localizer["time_period_placeholder"] " required>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+               
+            </div>
+            <button type="submit" value="Create" class="btn btn-primary">
+                <span class="btnText">@localizer["save"]</span>
+            </button>
+
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

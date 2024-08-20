@@ -1,0 +1,149 @@
+﻿@model LoginViewModel
+@{
+    Layout = null;
+    var isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
+
+}
+
+<!DOCTYPE html>
+<html lang="@(isRTL ? "ar" : "en")" dir="@(isRTL ? "rtl" : "ltr")">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+
+
+    <link href="~/css/style.css" rel="stylesheet" />
+
+    <link href="~/css/login.css" rel="stylesheet" />
+
+    @if (isRTL)
+    {
+        <style>
+            .input-div > div > h5 {
+            right: 10px;
+            }
+        </style>
+    }
+    else
+    {
+        <style>
+            .input-div > div > h5 {
+                left: 10px;
+            }
+        </style>
+    }
+
+</head>
+<body>
+   
+
+    <img class="wave" src="/images/wave.png">
+	<div class="container">
+
+		<div class="img">
+			<img src="/images/login-bg.svg">
+		</div>
+		<div class="login-content">
+            <partial name="_SelectLanguagePartial" />
+            <form style="margin-top:32px;" id="account" method="post">
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div  class="div" >
+           		   		<h5 >@localizer["username"]</h5>
+                        <input asp-for="EmailOrUsername"   aria-required="true"   type ="text" class="input"/>
+
+           		   </div>
+
+           		</div>
+                <span asp-validation-for="EmailOrUsername" class="text-danger"></span>
+
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+                        <h5>@localizer["password"]</h5>
+                        <input type="password" class="input" asp-for="Password"  aria-required="true"  />
+
+            	   </div>
+
+
+            	</div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+
+                <br>
+                <div class="checkbox mb-3 ">
+                    <label style="font-weight:bold;color:#555;" asp-for="RememberMe" class="form-label">
+                        <input style="margin-inline:20px;" class="form-check-input" asp-for="RememberMe" />
+                        @Html.DisplayNameFor(m => m.RememberMe)
+                    </label>
+                </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                <input id="login-submit" type="submit"  class="login-btn" value=@(localizer["login"])>
+            </form>
+        </div>
+    </div>
+
+
+
+
+         @*    <div class="content-wrapper d-flex align-items-center text-center">
+                <div class="row flex-grow">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-3 my-4">
+                            <partial name="_SelectLanguagePartial" />
+                            </div>
+                            </div>
+
+                        <div class="row justify-content-center">
+                            
+                            <div class="col-4 my-4">
+                               
+                                <form id="account" method="post">
+                                    <h2>login.</h2>
+                                    <hr />
+                                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="EmailOrUsername" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                                        <label asp-for="EmailOrUsername" class="form-label">Email</label>
+                                        <span asp-validation-for="EmailOrUsername" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                                        <label asp-for="Password" class="form-label">Password</label>
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="checkbox mb-3">
+                                        <label asp-for="RememberMe" class="form-label">
+                                            <input class="form-check-input" asp-for="RememberMe" />
+                                            @Html.DisplayNameFor(m => m.RememberMe)
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div> *@
+   
+        <script src="~/js/shared/login.js"></script>
+        <partial name="_ValidationScriptsPartial" />
+
+</body>
+</html>
+
+
+

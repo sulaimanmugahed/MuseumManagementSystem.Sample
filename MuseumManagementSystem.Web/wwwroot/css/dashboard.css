@@ -1,0 +1,166 @@
+﻿
+.info-artifact{
+   
+}
+
+
+.sss {
+   /* display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    text-align: center;*/
+   padding:16px;
+}
+.info-stat-first {
+    transition: border .4s;
+    border-radius: 15px;
+    background-color: rgba(41,128,185,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    text-align: center;
+}
+
+
+
+.info-stat-second {
+    transition: border .4s;
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+}
+
+  
+
+    .info-stat-artifact {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        height:180px;
+
+        
+    }
+
+        .info-stat-artifact .info-stat-name {
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+
+        .info-stat-artifact .info-stat-number {
+            position: relative;
+            font-weight: 500;
+            font-size: 2.5rem;
+            color: #2980B9;
+        }
+
+.info-stat-first .info-stat-artifact .info-stat-name {
+    font-size: 0.8rem;
+    color:white;
+}
+
+.info-stat-first .info-stat-artifact .info-stat-number {
+    position: relative;
+    font-weight: 500;
+    font-size: 4.5rem;
+    color: white;
+}
+
+.card-stat-main {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: white;
+    border-radius: 15px;
+    min-height:280px;
+}
+
+    .card-stat-main .card-stat {
+        position: relative;
+        background-color: white;
+        padding: 30px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+       /* .card-stat-main .card-stat:hover {
+            box-shadow: 0 7px 25px rgba(0, 0, 0, 0.10);
+        }*/
+
+        .card-stat-main .card-stat .numbers {
+            position: relative;
+            font-weight: 500;
+            font-size: 2.5rem;
+            color: #2980B9;
+        }
+
+        .card-stat-main .card-stat .cardName {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+.btn-stat {
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    background-color: white;
+    color: #2980B9;
+    border: 1px solid #2980B9;
+    border-radius: 20px !important;
+}
+
+
+
+    .btn-stat:hover {
+        color: white;
+        background-color: #2980B9;
+        cursor: pointer;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+    }
+
+
+.info-stat-first .btn-stat {
+    margin-top: 16px;
+    background-color: white;
+    color: #2980B9;
+    border:none;
+}
+
+.info-stat-second .btn-stat {
+    background-color: white;
+    color: #2980B9;
+    border: 1px solid #2980B9;
+    
+}
+
+    .info-stat-second .btn-stat:hover {
+        background-color: #2980B9;
+        color:white;
+    }
+
+
+
+@media (min-width: 576px) {
+    .card-stat-main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .card-stat-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 992px) {
+    .card-stat-main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

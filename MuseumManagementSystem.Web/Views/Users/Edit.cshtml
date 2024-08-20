@@ -1,0 +1,179 @@
+﻿@model EditUserViewModel
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<div class="page-header pb-2">
+    <h4>@localizer["editUserTitle"]</h4>
+    <back-button />
+
+</div>
+<div class="card">
+    <div class="card-body col-12">
+
+        <form asp-action="Edit" method="post" id="form">
+            <input type="hidden" asp-for="Id" />
+            <div class="row pb-4">
+                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                    <label asp-for="UserName" class="form-label"></label>
+                    <input asp-for="UserName" class="form-control" placeholder="@localizer["username_placeholder"]">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                    <label asp-for="FirstName" class="form-label"></label>
+                    <input asp-for="FirstName" class="form-control" placeholder="@localizer["firstname_placeholder"]">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                    <label asp-for="LastName" class="form-label"></label>
+                    <input asp-for="LastName" class="form-control" placeholder="@localizer["lastname_placeholder"]">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="@localizer["email_placeholder"]">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                    <label asp-for="PhoneNumber" class="form-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="@localizer["phone_number_placeholder"]">
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                    <label asp-for="SelectedRole" class="form-label"></label>
+                    <br>
+                    <select id="singal_option" asp-for="SelectedRole" asp-items="Model.Roles" placeholder="@localizer["role_placeholder"]">
+                        <option disabled selected></option>
+                    </select>
+                    <span asp-validation-for="SelectedRole" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                    <label asp-for="NewPassword" class="form-label"></label>
+                    <input type="password" asp-for="NewPassword" class="form-control" placeholder="@localizer["password_placeholder"]">
+                    <span asp-validation-for="NewPassword" class="text-danger"></span>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                    <label asp-for="ConfirmNewPassword" class="form-label"></label>
+                    <input type="password" asp-for="ConfirmNewPassword" class="form-control" placeholder="@localizer["confirm_password_placeholder"]">
+                    <span asp-validation-for="ConfirmNewPassword" class="text-danger"></span>
+
+                </div>
+
+
+
+
+
+
+
+                <div class="col-12">
+                    <input type="submit" value="@localizer["save"]" class="btn btn-primary mt-4 " />
+                </div>
+
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+@*
+
+<div class="content-wrapper d-flex align-items-center auth">
+    <div class="row flex-grow">
+        <div class="col-lg-6 mx-auto">
+            <div class="auth-form-light text-left p-5">
+                <div class="brand-logo">
+                    <img src="../../assets/images/logo.svg">
+                </div>
+                <h4>New here?</h4>
+                <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+                <form class="pt-3" method="post" asp-controller="Users" asp-action="Edit" role="form">
+
+              <input type="hidden" asp-for="Id"/>
+
+
+                    <div class="form-group ">
+                        <input type="text" class="form-control form-control-lg" asp-for="FirstName" placeholder="First Name">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" asp-for="LastName" placeholder="Last Name">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+
+                   </div>
+
+                   <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" asp-for="UserName" placeholder="UserName">
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" asp-for="Email" placeholder="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                     <div class="form-group">
+                        <input type="password" class="form-control form-control-lg" asp-for="NewPassword" placeholder="NewPassword">
+                        <span asp-validation-for="NewPassword" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control form-control-lg" asp-for="ConfirmNewPassword" placeholder="ConfirmNewPassword">
+                        <span asp-validation-for="ConfirmNewPassword" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="col-3 pb-4">
+                        <label asp-for="selectedRole" class="form-label"></label>
+                        <select id="singal_option" asp-for="selectedRole" asp-items="@Model.Roles" placeholder="@localizer["artifactTypePlaceholder"]">
+                            asp-items="Model.ArtifactTypes">
+                            <option disabled selected></option>
+                        </select>
+                        <span asp-validation-for="selectedRole" class="text-danger"></span>
+                    </div>
+
+
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" >@localizer["save"]</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+ *@
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_FormScriptsPartial");
+    }
+    <partial name="_ValidationScriptsPartial" />
+}

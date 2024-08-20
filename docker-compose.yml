@@ -1,0 +1,87 @@
+version: '3.4'
+
+services:
+  museummanagementsystem.web:
+    image: ${DOCKER_REGISTRY-}museummanagementsystemweb
+    container_name: museummanagementsystem.web
+    build:
+      context: .
+      dockerfile: ./MuseumManagementSystem.Web/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    networks:
+      - net1
+    
+    volumes:
+      - D:\ArtifactImages:/app/wwwroot/ArtifactImages:rw
+    depends_on:
+      - museummanagementsystem.database
+      - museummanagementsystem.cache
+      - museummanagementsystem.ai
+
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=museummanagementsystem.database;Database=DockerComposeDemo;User Id=sa;Password=Abcd12345;Trust Server Certificate=true
+      - ConnectionStrings__RedisConnection= museummanagementsystem.cache
+      - ASPNETCORE_HTTP_PORTS=5000
+      - ImageSearchAppSettings__Host=host.docker.internal
+      - ImageSearchAppSettings__Port=5010
+      - ImageSearchAppSettings__Scheme=http
+
+
+
+  museummanagementsystem.database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: museummanagementsystem.database
+    networks:
+      - net1
+    hostname: museummanagementsystem.database
+    volumes:
+      - sqldata_vol:/var/opt/mssql
+    ports:
+      - "9433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Abcd12345
+
+
+
+  museummanagementsystem.cache:
+    image: redis:latest
+    container_name: museummanagementsystem.cache
+    restart: always
+    networks:
+      - net1
+    ports:
+      - "5005:6379"
+
+  museummanagementsystem.ai:
+     image: image-search-api
+     container_name: museummanagementsystem.ai
+     hostname: museummanagementsystem.ai
+     restart: always
+     networks:
+        - net1
+
+     volumes:
+      - D:\ArtifactImages:/app/static/img:rw
+      - C:\Users\hicom\.keras:/root/.keras
+     
+     ports:
+        - "5010:5005"
+
+  
+
+
+  
+
+
+networks:
+  net1:
+
+
+volumes:
+  sqldata_vol:
+  artifactimages_vol:
+    external: true
+    

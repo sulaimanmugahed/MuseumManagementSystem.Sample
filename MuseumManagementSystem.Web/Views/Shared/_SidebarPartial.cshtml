@@ -1,0 +1,126 @@
+﻿@inject IViewLocalizer localizer
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav" id="side_ul">
+
+        <vc:userinfo></vc:userinfo>
+
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Statistics" asp-action="Index">
+                <span class="menu-title">@localizer["statistics"]</span>
+                <i class="mdi mdi-poll-box menu-icon"></i>
+            </a>
+        </li>
+       
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Reports" asp-action="Index">
+                <span class="menu-title">@localizer["reports"]</span>
+                <i class="mdi mdi-equal-box menu-icon"></i>
+            </a>
+        </li>
+
+        @if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin") || User.IsInRole("Member"))
+        {
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Artifacts" asp-action="Index">
+                    <span class="menu-title">@localizer["artifacts"]</span>
+                    <i class="mdi mdi-table menu-icon"></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="IntelligentSearch" asp-action="Index">
+                    <span class="menu-title">@localizer["intelligent-search"]</span>
+                    <i class="mdi mdi-yeast menu-icon"></i>
+                </a>
+            </li>
+        }
+
+      
+       
+
+
+
+        @if (User.IsInRole("SuperAdmin"))
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Users" asp-action="Index">
+                    <span class="menu-title">@localizer["users"]</span>
+                    <i class="mdi mdi-account-multiple menu-icon"></i>
+                </a>
+            </li>
+          
+        }
+
+
+        @if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+        {
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="RecycleBin" asp-action="Index">
+                    <span class="menu-title">@localizer["recyclebin"]</span>
+                    <i class="mdi mdi-delete menu-icon"></i>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link vv" href="#" data-bs-toggle="collapse" data-bs-target="#ui-basic" aria-expanded="false"
+                   aria-controls="ui-basic">
+                    <span class="menu-title">@localizer["manageStowages"]</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="ui-basic">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Safes"
+                               asp-action="Index">@localizer["safes"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Stowages"
+                               asp-action="Index">@localizer["stowages"]</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#" data-bs-target="#general-pages" aria-expanded="false"
+                   aria-controls="general-pages">
+                    <span class="menu-title">@localizer["others"]</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="general-pages">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="ArtifactTypes"
+                               asp-action="Index">@localizer["artifactTypes"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Materials"
+                               asp-action="Index">@localizer["materials"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="TimePeriods"
+                               asp-action="Index">@localizer["timePeriod"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="BioDegs"
+                               asp-action="Index">@localizer["bioDeg"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="ArtifactConditions"
+                               asp-action="Index">@localizer["artifactCondition"]</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+        }
+
+
+
+
+    </ul>
+</nav>

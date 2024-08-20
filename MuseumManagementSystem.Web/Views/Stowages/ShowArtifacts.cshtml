@@ -1,0 +1,64 @@
+﻿@model StowageViewModel
+@{
+    ViewData["Title"] = "ShowArtifacts";
+}
+
+@section Styles {
+    <link href="~/css/datatable.css" rel="stylesheet" />
+}
+<div class="page-header">
+    <h4>@Model.Name</h4>
+    <back-button />
+
+    
+</div>
+<div  class="card " id="safe" data-safeid="@Model.Id">
+    <div class="card-body dt-style col-12" style="min-height:550px;">
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["AlertMessage"]
+
+            </div>
+        }
+
+        <div class="row dt-btn-dev mb-2">
+
+            <div class="myButtons col-lg-8 col-md-8 col-sm-12">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-2">
+                <input type="text" class=" table_search " id="tableSearch" placeholder="@localizer["search_placeholder"]">
+            </div>
+        </div>
+        <table id="table_stowage_artifacts"  class="table table-striped table-bordered pt-4 pb-4" cellspacing="0">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>@localizer["name"]</th>
+                    <th>@localizer["serialNumber"]</th>
+                    <th>@localizer["oldMuseumNumber"]</th>
+                    <th>@localizer["newMuseumNumber"]</th>
+                    <th>@localizer["count"]</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+
+        <div class="dt_info">
+        </div>
+        <div class="my_pagination">
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_DataTableScript");
+     }
+
+    <script src="~/js/stowages/show-artifacts.js"></script>
+}

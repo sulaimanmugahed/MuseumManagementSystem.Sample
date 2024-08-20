@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MuseumManagementSystem.Application.DTOs.BioDeg
+{
+    public class CreateBioDegDto:IBioDegDto
+    {
+        public string Name { get; set; }
+
+    }
+}

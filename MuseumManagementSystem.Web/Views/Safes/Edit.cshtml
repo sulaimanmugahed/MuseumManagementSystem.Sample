@@ -1,0 +1,61 @@
+﻿ @model SafeEditViewModel
+@inject IViewLocalizer localizer
+
+
+@{
+    ViewData["Title"] = "Edit";
+
+}
+
+<div class="page-header pb-2">
+    <h4>@localizer["edit_safe_title"]</h4>
+    <back-button />
+
+</div>
+
+
+<div class="card">
+    <div class="card-body col-12">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row  pb-4">
+                <div class=" col-lg-4 col-md-6 col-sm-12 mb-2">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input type="text" asp-for="Name" class="form-control" placeholder="@localizer["safe_name_placeholder"]" required>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+                    <label asp-for="SelectedStowage" class="form-label"></label>
+                    <select id="singal_option" asp-for="SelectedStowage" asp-items="@Model.Stowages" placeholder="@localizer["stwage_placeholder"]">
+                        asp-items="Model.ArtifactTypes">
+                    </select>
+                    <span asp-validation-for="SelectedStowage" class="text-danger"></span>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-primary">
+                <span class="btnText">@localizer["save"]</span>
+            </button>
+
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        await Html.RenderPartialAsync("_FormScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        VirtualSelect.init({
+            ele: '#singal_option',
+            multiple: false,
+            search: true
+
+        });
+    </script>
+}
+

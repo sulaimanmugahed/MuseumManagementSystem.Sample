@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Cairo';
+    src: url('Cairo-Regular.eot');
+    src: local('Cairo-Regular'),
+        url('Cairo-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Cairo-Regular.woff2') format('woff2'),
+        url('Cairo-Regular.woff') format('woff'),
+        url('Cairo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('Cairo-Light.eot');
+    src: local('Cairo-Light'),
+        url('Cairo-Light.eot?#iefix') format('embedded-opentype'),
+        url('Cairo-Light.woff2') format('woff2'),
+        url('Cairo-Light.woff') format('woff'),
+        url('Cairo-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('Cairo-ExtraLight.eot');
+    src: local('Cairo-ExtraLight'),
+        url('Cairo-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Cairo-ExtraLight.woff2') format('woff2'),
+        url('Cairo-ExtraLight.woff') format('woff'),
+        url('Cairo-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('Cairo-Black.eot');
+    src: local('Cairo-Black'),
+        url('Cairo-Black.eot?#iefix') format('embedded-opentype'),
+        url('Cairo-Black.woff2') format('woff2'),
+        url('Cairo-Black.woff') format('woff'),
+        url('Cairo-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('Cairo-SemiBold.eot');
+    src: local('Cairo-SemiBold'),
+        url('Cairo-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Cairo-SemiBold.woff2') format('woff2'),
+        url('Cairo-SemiBold.woff') format('woff'),
+        url('Cairo-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('Cairo-Bold.eot');
+    src: local('Cairo Bold'), local('Cairo-Bold'),
+        url('Cairo-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Cairo-Bold.woff2') format('woff2'),
+        url('Cairo-Bold.woff') format('woff'),
+        url('Cairo-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+

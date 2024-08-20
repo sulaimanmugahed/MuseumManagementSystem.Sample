@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootbox.js@6.0.0",
+      "destination": "wwwroot/lib/bootbox.js/"
+    },
+    {
+      "library": "datatables@1.10.21",
+      "destination": "wwwroot/lib/datatables/"
+    },
+    {
+      "library": "bootstrap-datepicker@1.10.0",
+      "destination": "wwwroot/lib/bootstrap-datepicker/"
+    },
+    {
+      "library": "sweetalert2@11.10.3",
+      "destination": "wwwroot/lib/sweetalert2/"
+    }
+  ]
+}

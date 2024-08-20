@@ -1,0 +1,355 @@
+{
+  //global
+  "users": "Users",
+  "artifacts": "Artifacts",
+  "statistics": "Statistics",
+  "recyclebin": "Recycle Bin",
+  "reports": "Repoerts",
+  "intelligent-search": "Intelligent Search",
+  "manageStowages": "Manage Stowages",
+  "others": "Others",
+  "stowages": "Stowages",
+  "stowage": "Stowage",
+  "safes": "Safes",
+  "name": "Name",
+  "nameInEnglish": "Name In English",
+  "type": "Type",
+  "artifactTipe": "Artifact Type",
+  "artifactTypes": "Artifact Types",
+  "serialNumber": "SerialNumber",
+  "oldMuseumNumber": "OldMuseumNumber",
+  "newMuseumNumber": "NewMuseumNumber",
+  "count": "Count",
+  "importantMaterial": "Imprtant Material",
+  "imageLink": "Image Link",
+  "edit": "Edit",
+  "details": "Details",
+  "delete": "Delete",
+  "add": "Add",
+  "save": "Save",
+  "create": "Create",
+  "createArtifactTitle": "Add new Artifact",
+  "description": "Description",
+  "size": "Size",
+  "note": "Note",
+  "artifactType": "Artifact Type",
+  "materials": "Materials",
+  "material": "Material",
+  "bioDeg": "Bio Deg",
+  "timePeriod": "Time Period",
+  "timePeriods": "Time Periods",
+  "safe": "Safe",
+  "artifactCondition": "Artifact Condition",
+  "artifactConditions": "Artifact Conditions",
+
+  "addImages": "Add images",
+  "lastModifiedDate": "Last Modidied Date",
+  "lastModifiedBy": "Last Modidied By",
+  "dateCreated": "Created Date",
+  "createdBy": "Created By",
+  "artifactsCount": "Artifacts Count",
+  "safesCount": "Safes Count",
+  "address": "Address",
+  "stowageName": "Stowage Name",
+  "reportInformations": "Report Informations",
+  "email": "Email",
+  "role": "Role",
+  //ReportDetails
+  "reportTitle": " Report Title",
+  "reportDate": " Report Date",
+  "reportNO": " Report NO",
+  //Placeholders
+  "serialNumberPlaceholder": "Enter Serial Number",
+  "artifactNamePlaceholder": "Enter Artifact Name",
+
+  "oldMuseumNumberPlaceholder": "Enter Old Musuem Number",
+  "newMuseumNumberPlaceholder": "Enter New Musuem Number",
+  "countPlaceholder": "Enter Artifacts Count",
+  "sizePlaceholder": "Enter Artifact Size",
+  "notePlaceholder": "Enter Artifact Note",
+  "descriptionPlaceholder": "Enter Artifact Description",
+  "artifactTypePlaceholder": "Choose Artifact Type",
+
+  "artifactConditionPlaceholder": "Choose Artifact Condition",
+
+  "bioDegPlaceholder": "Choose Artifact Biodeg",
+
+  "timePeriodPlaceholder": "Choose Time period",
+
+  "materialsPlaceholder": "Choose Materials",
+
+  "importantMaterialPlaceholder": "Choose Important Material",
+  "imageLinkPlaceholder": "Enter Image Link",
+  "safePlaceholder": "Choose Safe",
+
+  "stowagePlaceholder": "Choose Stowage",
+
+
+
+  "username_placeholder": "Enter Username",
+  "firstname_placeholder": "Enter Firstname",
+  "lastname_placeholder": "Enter Lastname",
+  "email_placeholder": "Enter Email",
+  "phone_number_placeholder": "Enter Phone Number",
+  "role_placeholder": "Choose Role",
+  "password_placeholder": "Enter Password",
+  "confirm_password_placeholder": "Confirm Password",
+
+
+
+
+  "safe_name_placeholder": "Enter Safe Name",
+  "stwage_placeholder": "Choose Stowage",
+
+
+  "stowage_name_placeholder": "Enter Stowage Name",
+  "stowage_address_placeholder": "Enter Stowage Address",
+
+
+
+  "artifact_type_placeholder": "Enter Artifact Type",
+
+
+
+  "material_placeholder": "Enter Artifact Material",
+
+
+  "time_period_placeholder": "Enter Artifact Time Period",
+
+
+  "biodeg_placeholder": "Enter Artifact Biodeg",
+
+  "artifact_condition_placeholder": "Enter Artifact Condition ",
+  //success message
+  "done": "Done Successfuly",
+  "successDeleteMessage": "Deleted Successfuly",
+  "successCreateMessage": "Created Successfuly",
+  "successEditMessage": "Updated Successfuly",
+  "successRecoveryMessage": "Recovery done Successfuly",
+  //error message
+  "unknownErrorMessage": "Some thing went wrong",
+  "cantDeleteTypeErrorMessage": "You cant delete because there r artifacts with this type",
+  "cantDeleteMaterialErrorMessage": "You cant delete because there r artifacts contain this material",
+  "cantDeleteSafeErrorMessage": "You cant delete because there r artifacts in this safe",
+  "cantDeleteStowageErrorMessage": "You cant delete because there r safes in this stowage",
+
+
+
+
+  "cantDeleteTimePeriodErrorMessage": "You cannot delete this time period because there are artifacts from this era.",
+  "cantDeleteBioDegErrorMessage": "You cannot delete this biodegradation level because there are artifacts with this degradation level.",
+  "cantDeleteArtifactConditionErrorMessage": "You cannot delete this artifact condition because there are artifacts with this condition.",
+
+
+
+  //exceptions
+  "nullArtifactException": "Sorry, We couldn't find this artifact",
+  "nullSafeException": "Sorry, We couldn't find this safe",
+  "nullStowageException": "Sorry, We couldn't find this stowage",
+  "nullMaterialException": "Sorry, We couldn't find this material",
+  "nullTimePeriodException": "Sorry, We couldn't find this time period",
+  "nullBioDegException": "Sorry, We couldn't find this bio deg",
+  "nullArtifactTypeException": "Sorry, We couldn't find this artifact type",
+  "nullArtifactConditionException": "Sorry, We couldn't find this artifact condition",
+  //Validations errors
+
+
+  "requiredFailedValidation": "{0} is required",
+  "inValidNumberValidation": "{0} must contain only numbers",
+  "invalidUrlValidation": "{0} format is invalid",
+  "invalidSizeValidation": "Size is invalid",
+  "stringLengthValidayion": "{0} must be between {2} and {1} characters",
+  "numberLengthValidayion": "{0} must not exceed {1} characters",
+  "minimumNameValidation": "Name must contain at least 2 characters",
+  "maximummNameValidation": "Name must not exceed 50 characters",
+
+
+
+  "safeNameAssignedValidation": "This name is allready assigned to another safe",
+  "stowageNameAssignedValidation": "This name is allready assigned to another stowage",
+  "materialNameAssignedValidation": "This name is allready assigned to another material",
+  "timePeriodNameAssignedValidation": "This name is allready assigned to another time period",
+  "bioDegNameAssignedValidation": "This name is allready assigned to another biodeg",
+  "artifactConditionNameAssignedValidation": "This name is allready assigned to another artifact condition",
+  "artifactTypeNameAssignedValidation": "This name is allready assigned to another artifact type",
+  "artifactNameAssignedValidation": "This name is allready assigned to another artifact",
+  "emailAssignedValidation": "This email is allready assigned to another user",
+  "userNameAssignedValidation": "This username is allready assigned to another user",
+  "serialNumberAssignedValidation": "This serial number is allready assigned to another artifact",
+  "allowedImageExtentionsValidation": "Only jpg images are allowed",
+  "invalidLogin": "Invalid login",
+
+  //datatable
+  "print": "Print",
+  "export": "Export",
+  //titleAndtext
+  "imagesUploadText": "click to upload images.",
+  "imagesUploadText2": "Upload up to 20 images",
+  "imagesUploadText3": "Only jpg images are allowed for upload",
+  "didNotEditYet": "did Not Edit Yet",
+  "undefined": "Undefined",
+  //charts
+  "barChart": "Bar Chart",
+  "lineChart": "Line Chart",
+  "pieChart": "Pie Chart",
+  "radarChart": "Radar Chart",
+  "doughnutChart": "Doughnut Chart",
+  //NameOfRoles
+  "nameOfAdmin": "Admin",
+  "nameOfBase": "Base",
+  "nameOfMember": "Member",
+
+  "change-profile-image-msg": "change profile",
+  "upload-profile-image-msg": "upload profile",
+  "show-statistics": "Show Statistics",
+
+  "total_artifact_count": "Total Artifacts Count",
+  "artifact_without_safes_count": "Total artifats without safe count",
+  "artifact_without_oldMuseumNumber_count": "Total artifats without Old Museum Number count",
+  "artifact_without_newMuseumNumber_count": "Total artifats without New Museum Number count",
+  "show_all": "Show all",
+  "show": "Show",
+
+
+  "username": "Username",
+  "password": "Password",
+  "login": "Login",
+  "remember-me": "Remember Me ?",
+
+
+  "intele_search_image_upload_msg_one": "Upload image",
+  "intele_search_image_upload_msg_tow": "Image size must be less than 20MB",
+  "select_image": "Select Image",
+  "send": "Send",
+
+
+  "first-name": "First Name",
+  "last-name": "Last Name",
+  "confirm-password": "Confirm Password",
+  "phone-number": "Phone Number",
+  "new-password": "New Password",
+  "confirm-new-password": "Confirm New Password",
+  "editUserTitle": "Edit User",
+
+
+
+  "editArtifactTitle": "Edit Artifact",
+  "artifacts_without_safe_title": "Artifacts without safe",
+  "artifacts_without_oldmuseumnumber_title": "Artifacts without Old Museum Number",
+  "artifacts_without_newmuseumnumber_title": "Artifacts without New Museum Number",
+  "create_safe_title": "Add new Safe",
+  "edit_safe_title": "Edit Safe",
+  "add_new_safe_to_stowage_title": "Add new Safe to Stowage",
+  "create_stowage_title": "Add new Stowage",
+  "edit_stowage_title": "Edit Stowage",
+  "create_timePeriod_title": "Add Time Period",
+  "edit_timePeriod_title": "Edit Time Period",
+  "create_user_title": "Add new User",
+  "edit_user_title": "Edit new User",
+  "create_condition_title": "Add Artifact Condition",
+  "edit_condition_title": "Edit Artifact Condition",
+  "create_type_title": "Add Artifact Type",
+  "edit_type_title": "Add Artifact Type",
+  "create_biodeg_title": "Add Biodeg",
+  "edit_biodeg_title": "Edit Biodeg",
+  "create_material_title": "Create Material",
+  "edit_material_title": "Edit Material",
+  "oops": "Oops",
+  "something_wrong_msg": "Something went wrong",
+  "notfound_error_message": "The page you’re looking for was not found.",
+  "back": "Back",
+  "artifact_types_statistics": "Artifact Types Statistics",
+  "artifact_conditions_statistics": "Artifact Conditions Statistics",
+  "artifact_materials_statistics": "Artifact Materials Statistics",
+  "time_periods_statistics": "Time Periods Statistics",
+  "biodegs_statistics": "Biodeg Statistics",
+
+
+  "access_denied_msg": "Access Denied",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "invalid_email": "Please enter a valid email address",
+  "assigned_value": "{0} already exist",
+  "search_placeholder": "Search ..",
+
+
+
+
+
+  "report_no_placeholder": "Enter Report Number",
+  "report_title_placeholder": "Enter Report Title",
+  "report_date_placeholder": "Enter Report Date",
+
+
+  "timeperiod": "Time Period",
+  "artifacttype": "Artifact Type",
+  "artifactcondition": "Artifact Condition",
+  "biodeg": "BioDeg",
+  "serialnumber": "Serial Number",
+  "oldmuseumnumber": "Old Museum Number",
+  "newmuseumnumber": "New Museum Number",
+  "importantmaterial": "Important Material",
+  "imagelink": "Image Link",
+
+
+  "profile": "Profile"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

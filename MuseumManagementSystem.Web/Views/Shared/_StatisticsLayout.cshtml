@@ -1,0 +1,38 @@
+﻿@model ChartJsViewModel
+@inject IViewLocalizer localizer
+@{
+    Layout = "_Layout";
+}
+<div class="card">
+    <div class="card-body col-12">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-type-tab" data-bs-toggle="pill" data-bs-target="#pills-type" type="button" role="tab" aria-controls="pills-type" aria-selected="true">@localizer["artifactType"]</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-timeperiod-tab" data-bs-toggle="pill" data-bs-target="#pills-timeperiod" type="button" role="tab" aria-controls="pills-timeperiod" aria-selected="false">@localizer["timePeriod"]</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-material-tab" data-bs-toggle="pill" data-bs-target="#pills-material" type="button" role="tab" aria-controls="pills-material" aria-selected="false">@localizer["materials"]</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-biodeg-tab" data-bs-toggle="pill" data-bs-target="#pills-biodeg" type="button" role="tab" aria-controls="pills-biodeg" aria-selected="false">@localizer["bioDeg"]</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-condition-tab" data-bs-toggle="pill" data-bs-target="#pills-condition" type="button" role="tab" aria-controls="pills-condition" aria-selected="false">@localizer["artifactCondition"]</button>
+            </li>
+
+
+
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            @RenderBody()
+  @*           <div class="tab-pane fade show active" id="pills-type" role="tabpanel" aria-labelledby="pills-type-tab"><vc:typechart chart-shape="bar"></vc:typechart> </div>
+            <div class="tab-pane fade" id="pills-timeperiod" role="tabpanel" aria-labelledby="pills-timeperiod-tab"><vc:timeperiodchart chart-shape="pie"></vc:timeperiodchart> </div>
+            <div class="tab-pane fade" id="pills-material" role="tabpanel" aria-labelledby="pills-material-tab"><vc:materialchart chart-shape="bar"></vc:materialchart></div>
+            <div class="tab-pane fade" id="pills-biodeg" role="tabpanel" aria-labelledby="pills-biodeg-tab"><vc:biodegchart chart-shape="pie"></vc:biodegchart></div>
+            <div class="tab-pane fade" id="pills-condition" role="tabpanel" aria-labelledby="pills-condition-tab"><vc:conditionchart chart-shape="pie"></vc:conditionchart></div> *@
+        </div>
+
+    </div>
+</div>

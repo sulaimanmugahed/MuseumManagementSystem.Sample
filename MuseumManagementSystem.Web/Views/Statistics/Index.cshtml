@@ -1,0 +1,119 @@
+﻿@model StatisticsViewModel
+
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+@section Styles {
+    <link href="~/css/dashboard.css" rel="stylesheet" />
+}
+
+
+<div class="card">
+    <div class="card-body ">
+        <div class="row sss">
+
+            <div class="col-md-12  col-lg-4 col-sm-12  info-stat-first ">
+                    <div class=" info-stat-artifact">
+                        <div class="info-stat-number">
+                            @Model.TotalArtifactCount
+                        </div>
+                        <div class="info-stat-name">
+                            @localizer["total_artifact_count"]
+                        </div>
+                        <a asp-controller="Artifacts" asp-action="Index" class="btn-stat">@localizer["show"]</a>
+
+
+                    </div>
+                </div>
+
+
+            <div class="info-stat-second col-md-12  col-lg-8 col-sm-12 ">
+                <div class="row ">
+                <div class="col-md-4  col-lg-4 col-sm-12 info-stat-artifact">
+                   
+                    <div class=" info-stat-number">
+                        @Model.ArtifactWithoutSafeCount
+                    </div>
+                    <div class="info-stat-name">
+                            @localizer["artifact_without_safes_count"]
+                    </div>
+                        
+
+                        <a asp-controller="Artifacts" asp-action="ArtifactsWithoutSafe" class="btn-stat">@localizer["show"]</a>
+
+                </div>
+              
+                    <div class="col-md-4 col-lg-4 col-sm-12 info-stat-artifact">
+                        <div class="info-stat-number">
+                            @Model.ArtifactWithoutOldMuseumNumberCount
+                        </div>
+                        <div class="info-stat-name">
+                            @localizer["artifact_without_oldMuseumNumber_count"]
+                        </div>
+                        <a asp-controller="Artifacts" asp-action="ArtifactsWithoutOldMuseumNumber" class="btn-stat">@localizer["show"]</a>
+
+                    </div>
+
+                    <div class="col-md-4  col-lg-4 col-sm-12 info-stat-artifact">
+                        <div class="info-stat-number">
+                            @Model.ArtifactWithoutNewMuseumNumberCount
+                        </div>
+                        <div class="info-stat-name">
+                            @localizer["artifact_without_newMuseumNumber_count"]
+                        </div>
+                        <a asp-controller="Artifacts" asp-action="ArtifactsWithoutNewMuseumNumber" class="btn-stat">@localizer["show"]</a>
+
+                    </div>
+                </div>
+
+             
+            </div>
+           
+            </div>
+            <div class="card-stat-main">
+                <div class="card-stat">
+                    <div>
+                        <div class="numbers">@Model.ArtifactTypesCount</div>
+                        <div class="cardName">@localizer["artifactTypes"]</div>
+                        <a asp-action="ArtifactTypesStatistics" class="btn-stat">@localizer["show-statistics"]</a>
+                   </div>
+                </div>
+                <div class="card-stat">
+                    <div>
+                        <div class="numbers">@Model.TimePeriodsCount</div>
+                        <div class="cardName">@localizer["timePeriods"]</div>
+                        <a asp-action="TimePeriodsStatistics" class="btn-stat">@localizer["show-statistics"]</a>
+
+
+                    </div>
+                </div>
+                <div class="card-stat">
+                    <div>
+                        <div class="numbers">@Model.MaterialsCount</div>
+                        <div class="cardName">@localizer["materials"]</div>
+                        <a asp-action="MaterialsStatistics" class="btn-stat">@localizer["show-statistics"]</a>
+
+
+                    </div>
+                </div>
+                <div class="card-stat">
+                    <div>
+                        <div class="numbers">@Model.BiodegsCount</div>
+                        <div class="cardName">@localizer["bioDeg"]</div>
+                        <a asp-action="BioDegsStatistics" class="btn-stat">@localizer["show-statistics"]</a>
+
+
+                    </div>
+                </div>
+                <div class="card-stat">
+                    <div>
+                        <div class="numbers">@Model.ArtifactConditionsCount</div>
+                        <div class="cardName">@localizer["artifactConditions"]</div>
+                        <a asp-action="ArtifactConditionsStatistics" class="btn-stat">@localizer["show-statistics"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+</div>

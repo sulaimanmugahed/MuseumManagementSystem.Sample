@@ -1,0 +1,152 @@
+﻿@model ProfileViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+
+}
+
+<div class="page-header pb-2">
+    <h4>@localizer["profile"]</h4>
+    <back-button />
+
+
+</div>
+
+<div class="card">
+    <div class="card-body col-12">
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["AlertMessage"]
+
+            </div>
+        }
+        <form id="form" method="post" asp-action="Update" asp-controller="Profile" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="ProfilePictureUrl" />
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-lg-6 profile-col">
+                    <div class="form-group img-container">
+                        <div class="profile-image-container" id="imageContainer">
+                            <div id="profile-upload" class="profile-image-overlay">
+                                @if (Model.ProfilePictureUrl is not null)
+                                {
+                                    <h2 style="color:white;">@localizer["change-profile-image-msg"]</h2>
+                                }
+
+                                else
+                                {
+                                    <h2 style="color:white;">@localizer["upload-profile-image-msg"]</h2>
+                                }
+                                <input  type="file" accept="image/*" id="profileInput" asp-for="ProfilePicture"  style="display:none;"/>
+                            </div>
+                            <img id="profilePicture" class="profile-picture" alt="noProfile" src="@(Url.Content(Model.ProfilePictureUrl) ?? "/images/peakpx.jpg")" />
+                        </div>
+                        <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-lg-6">
+                    <div>
+
+                    <div class="form-group">
+                        <label asp-for="UserName"></label>
+                        <input asp-for="UserName" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+
+                    <input type="submit"  value=@localizer["save"] class="btn align-self-end btn-primary mt-4 submitBtn" />
+                    </div>
+                </div>
+              
+
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts{
+
+    <script src="~/js/profile/index.js"></script>
+ @*    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    } *@
+   @*  <script>
+
+        $(document).ready(function () {
+            $('#profileInput').on('change', function (event) {
+                // Retrieve the selected file
+                const selectedFile = event.target.files[0];
+
+                // Create a FileReader instance
+                const reader = new FileReader();
+
+                // Set up the FileReader onload event handler
+                reader.onload = function (event) {
+                    // Create a new image element
+                    const imageElement = new Image();
+
+                    // Set the source to the selected file
+                    imageElement.src = event.target.result;
+
+                    // Add the existing classes of the image div to the new image element
+                    $('#imageContainer').children().each(function () {
+                        const classes = $(this).attr('class');
+                        if (classes) {
+                            imageElement.classList.add(classes);
+                        }
+                    });
+
+                    // Clear the image container and append the new image element
+                    $('#imageContainer').empty().append(imageElement);
+                };
+
+                // Read the selected file as a Data URL
+                reader.readAsDataURL(selectedFile);
+            });
+
+
+            ///////////////////////////////////////////
+            $('#form').submit(function (event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // Serialize the form data
+                var formData = $(this).serialize();
+
+                // Send the updated profile data to the server using AJAX
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: $(this).attr('method'),
+                    data: formData,
+                    success: function (response) {
+                        // Handle the server response
+                        if (response.success) {
+                            // Display a success message if needed
+                            alert('Profile updated successfully!');
+                        } else {
+                            // Display an error message if the update was not successful
+                            alert('Failed to update profile.');
+                        }
+                    },
+                    error: function () {
+                        // Handle the AJAX request error
+                        alert('An error occurred while updating the profile.');
+                    }
+                });
+            });
+        });
+    </script> *@
+}
